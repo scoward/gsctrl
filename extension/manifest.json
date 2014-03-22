@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Grooveshark Controller",
+    "version": "0.1",
+
+    "description": "Grooveshark control from external sources",
+    "icons": {
+        "16": "icon.jpeg" 
+    },
+    
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    
+    "content_scripts": [
+        {
+            "js": [
+                "contentscript.js"
+            ],
+            "matches": [
+                "http://grooveshark.com/*",
+                "http://preview.grooveshark.com/*"
+            ],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ],
+    
+    "browser_action": {
+    },
+    
+    "permissions": [
+        "tabs",
+        "http://localhost/*"
+    ]
+}
